@@ -26,26 +26,73 @@ The Histogram of gray scale image and color image is shown.
 
 ## Program:
 ```python
-# Developed By: 
-# Register Number: 
-
-
-
-
-
-
+# Developed By: Adhithya Perumal.D
+# Register Number: 212222230007
 ```
+# Grayscale image and Color image
+```
+import cv2
+import matplotlib.pyplot as plt
+gray_image = cv2.imread("ajith.png")
+color_image = cv2.imread("vijay.jpg",-1)
+cv2.imshow("Gray Image",gray_image)
+cv2.imshow("Colour Image",color_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+# Histogram of Grayscale image and color image
+```
+import numpy as np
+import cv2
+Gray_image = cv2.imread("ajith.png")
+Color_image = cv2.imread("vijay.jpg")
+import matplotlib.pyplot as plt
+gray_hist = cv2.calcHist([Gray_image],[0],None,[256],[0,256])
+color_hist = cv2.calcHist([Color_image],[0],None,[256],[0,256])
+plt.figure()
+plt.imshow(Gray_image)
+plt.show()
+plt.title("Histogram")
+plt.xlabel("Grayscale Value")
+plt.ylabel("Pixel Count")
+plt.stem(gray_hist)
+plt.show()
+plt.imshow(Color_image)
+plt.show()
+plt.title("Histogram of Color Image - Green Channel")
+plt.xlabel("Intensity Value")
+plt.ylabel("Pixel Count")
+plt.stem(color_hist)
+plt.show()
+cv2.waitKey(0)
+```
+# Histogram equalization of Grayscale image
+```
+import cv2
+gray_image = cv2.imread("vijay.jpg",0)
+cv2.imshow('Grey Scale Image',gray_image)
+equ = cv2.equalizeHist(gray_image)
+cv2.imshow("Equalized Image",equ)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
 ## Output:
 ### Input Grayscale Image and Color Image
 
+![Screenshot 2024-03-22 091652](https://github.com/Adhithya4116/Histogram-of-an-images/assets/118707079/a3c9915b-ff1b-41d3-aafd-74c1f52776b4)
+
 
 ### Histogram of Grayscale Image and any channel of Color Image
+![Screenshot 2024-03-22 093919](https://github.com/Adhithya4116/Histogram-of-an-images/assets/118707079/7fc7700c-41ff-43d0-aad5-42a284db1ed4)
 
+![Screenshot 2024-03-22 093929](https://github.com/Adhithya4116/Histogram-of-an-images/assets/118707079/d77bd98a-0c96-4da5-a3f4-dcbb0b5ac6cc)
 
 
 ### Histogram Equalization of Grayscale Image.
 
 
+![Screenshot 2024-03-22 091953](https://github.com/Adhithya4116/Histogram-of-an-images/assets/118707079/a58ea7f0-3e44-4add-9ec2-ca27781b1a23)
 
 
 ## Result: 
